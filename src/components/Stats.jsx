@@ -3,7 +3,7 @@ import React from "react"
 function Stats({ weatherData, loading, error }) {
   if (loading) {
     return (
-      <div className="bg-white rounded-lg shadow p-6 mb-6 text-center">
+      <div className="bg-white rounded-lg shadow p-6 mb-8 text-center">
         <p className="text-gray-600">Loading weather data...</p>
       </div>
     )
@@ -11,7 +11,7 @@ function Stats({ weatherData, loading, error }) {
 
   if (error) {
     return (
-      <div className="bg-white rounded-lg shadow p-6 mb-6 text-center">
+      <div className="bg-white rounded-lg shadow p-6 mb-8 text-center">
         <p className="text-red-600">Error: {error}</p>
       </div>
     )
@@ -19,7 +19,7 @@ function Stats({ weatherData, loading, error }) {
 
   if (!weatherData || weatherData.length === 0) {
     return (
-      <div className="bg-white rounded-lg shadow p-6 mb-6 text-center">
+      <div className="bg-white rounded-lg shadow p-6 mb-8 text-center">
         <p className="text-gray-600">No weather data available</p>
       </div>
     )
@@ -34,28 +34,28 @@ function Stats({ weatherData, loading, error }) {
   const coldestCity = weatherData.find(c => c.temp === minTemp)
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 mb-6 text-center">
-      <h2 className="text-xl font-semibold mb-4">Statistics</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div>
-          <p className="text-gray-600 text-sm">Cities</p>
-          <p className="text-2xl font-bold">{weatherData.length}</p>
+    <div className="bg-white rounded-lg shadow p-8 mb-8">
+      <h2 className="text-xl font-semibold mb-6 text-center text-gray-900">Statistics</h2>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="text-center">
+          <p className="text-gray-600 text-sm mb-2">Cities</p>
+          <p className="text-3xl font-bold text-gray-900">{weatherData.length}</p>
         </div>
-        <div>
-          <p className="text-gray-600 text-sm">Avg Temp</p>
-          <p className="text-2xl font-bold">{avgTemp}°F</p>
+        <div className="text-center">
+          <p className="text-gray-600 text-sm mb-2">Avg Temp</p>
+          <p className="text-3xl font-bold text-gray-900">{avgTemp}°F</p>
         </div>
-        <div>
-          <p className="text-gray-600 text-sm">Hottest</p>
-          <p className="text-2xl font-bold">{maxTemp}°F</p>
-          <p className="text-sm text-gray-600">
+        <div className="text-center">
+          <p className="text-gray-600 text-sm mb-2">Hottest</p>
+          <p className="text-3xl font-bold text-red-500">{maxTemp}°F</p>
+          <p className="text-sm text-gray-600 mt-1">
             {hottestCity?.city_name || 'N/A'}
           </p>
         </div>
-        <div>
-          <p className="text-gray-600 text-sm">Coldest</p>
-          <p className="text-2xl font-bold">{minTemp}°F</p>
-          <p className="text-sm text-gray-600">
+        <div className="text-center">
+          <p className="text-gray-600 text-sm mb-2">Coldest</p>
+          <p className="text-3xl font-bold text-blue-500">{minTemp}°F</p>
+          <p className="text-sm text-gray-600 mt-1">
             {coldestCity?.city_name || 'N/A'}
           </p>
         </div>
