@@ -62,9 +62,9 @@ Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/your-gif-link.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/oE5NPvm' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with Kap
+
 
 Notes
 
